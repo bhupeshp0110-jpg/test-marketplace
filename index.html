@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artsy Candles</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,8 +15,8 @@
             <h1>Artsy Candles</h1>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Products</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
                     <li><a href="#">About</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
@@ -23,8 +26,54 @@
     </header>
 
     <main>
-        <div class="container">
-            <h2>Our Products</h2>
+        <section class="hero">
+            <img src="https://images.unsplash.com/photo-1612293905607-b003de9e54fb?fm=jpg&q=60&w=400&ixlib=rb-4.1.0" alt="Artisanal candles" class="hero-background-img">
+            <div class="hero-content">
+                <h1>Handcrafted with Passion</h1>
+                <p>Discover our collection of artisanal candles, made with natural ingredients and unique fragrances.</p>
+                <a href="products.html" class="btn btn-primary">Explore Our Collection</a>
+            </div>
+        </section>
+
+        <section class="story-section">
+            <div class="story-background">
+                <img src="https://images.unsplash.com/photo-1572726729207-a78d6feb18d7?fm=jpg&q=60&w=400&ixlib=rb-4.1.0" alt="Candle making" class="story-background-img">
+            </div>
+            <div class="container">
+                <div class="story-content">
+                    <h2>Our Story</h2>
+                    <p>Founded on a passion for craftsmanship and a love for soothing ambiances, Artsy Candles began as a small workshop dedicated to creating unique, handcrafted candles. We believe that a candle is more than just a source of light; it's a centerpiece for moments of peace, celebration, and reflection.</p>
+                    <p>Each candle is poured by hand, using only natural soy wax, premium fragrance oils, and cotton wicks. Our scents are inspired by nature, memories, and travels, designed to transport you to a place of tranquility and comfort. We are committed to sustainability, using recyclable packaging and eco-friendly materials in all our products.</p>
+                    <p>From our hands to your home, we hope our candles bring a special glow to your life.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="values-section">
+            <div class="container">
+                <h2>Our Core Values</h2>
+                <div class="values-grid">
+                    <div class="value-item">
+                        <div class="value-icon">✨</div>
+                        <h3>Quality</h3>
+                        <p>We use only the finest natural ingredients to ensure a clean, long-lasting burn.</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">👐</div>
+                        <h3>Craftsmanship</h3>
+                        <p>Every candle is hand-poured with meticulous attention to detail and artistry.</p>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">🌱</div>
+                        <h3>Sustainability</h3>
+                        <p>We are committed to eco-friendly practices, from our soy wax to our recyclable packaging.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container" id="products">
+            <h2>Featured Products</h2>
             <div id="product-grid" class="product-grid">
                 <!-- Product cards will be inserted here by JavaScript -->
             </div>
