@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Header Parallax Effect
+    // Header Scroll Effect
     const header = document.querySelector('header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -26,6 +26,21 @@ document.addEventListener('DOMContentLoaded', () => {
             header.classList.remove('scrolled');
         }
     });
+
+    // Parallax Story Section
+    const storyBackground = document.querySelector('.story-background');
+    if (storyBackground) {
+        window.addEventListener('scroll', () => {
+            const scrollPosition = window.pageYOffset;
+            const storySection = document.querySelector('.story-section');
+            if (storySection) {
+                const storySectionTop = storySection.offsetTop;
+                if (scrollPosition > storySectionTop - window.innerHeight && scrollPosition < storySectionTop + storySection.offsetHeight) {
+                    storyBackground.style.transform = `translateY(${(scrollPosition - storySectionTop) * 0.3}px)`;
+                }
+            }
+        });
+    }
 
     // Product Data
     const products = [
@@ -83,7 +98,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const productGrid = document.getElementById('product-grid');
 
     function renderProducts() {
-        products.forEach((product, index) => {
+        if (!productGrid) return;
+
+        const isHomePage = window.location.pathname.endsWith('/') || window.location.pathname.endsWith('index.html');
+        const productsToRender = isHomePage ? products.slice(0, 4) : products;
+
+        productsToRender.forEach((product, index) => {
             const card = document.createElement('div');
             card.className = 'product-card';
             card.style.opacity = 0; // Start with card invisible

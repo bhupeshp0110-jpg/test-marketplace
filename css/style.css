@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -18,26 +18,30 @@ body {
 
 /* Light Mode Variables */
 :root {
-    --bg-color: #f4f4f4;
-    --text-color: #333;
-    --header-bg: #fff;
-    --header-text: #333;
-    --footer-bg: #333;
-    --footer-text: #fff;
-    --card-bg: #fff;
-    --card-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    --bg-color: #FAF7F5;
+    --text-color: #4A4A4A;
+    --header-bg: #FFFFFF;
+    --header-text: #4A4A4A;
+    --footer-bg: #EAEAEA;
+    --footer-text: #4A4A4A;
+    --card-bg: #FFFFFF;
+    --card-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    --accent-color: #BDBA9B;
+    --accent-color-hover: #A9A68C;
 }
 
 /* Dark Mode Variables */
 .dark-mode {
-    --bg-color: #1a1a1a;
-    --text-color: #f4f4f4;
-    --header-bg: #2c2c2c;
-    --header-text: #f4f4f4;
-    --footer-bg: #2c2c2c;
-    --footer-text: #f4f4f4;
-    --card-bg: #2c2c2c;
-    --card-shadow: 0 2px 5px rgba(255,255,255,0.1);
+    --bg-color: #2C2B2A;
+    --text-color: #EAEAEA;
+    --header-bg: #3D3C3A;
+    --header-text: #EAEAEA;
+    --footer-bg: #3D3C3A;
+    --footer-text: #EAEAEA;
+    --card-bg: #3D3C3A;
+    --card-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    --accent-color: #BDBA9B;
+    --accent-color-hover: #A9A68C;
 }
 
 body {
@@ -167,7 +171,7 @@ footer {
 }
 
 .product-card button {
-    background-color: #007bff;
+    background-color: var(--accent-color);
     color: white;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -177,8 +181,164 @@ footer {
 }
 
 .product-card button:hover {
-    background-color: #0056b3;
+    background-color: var(--accent-color-hover);
 }
+
+/* Story Section */
+.story-section {
+    position: relative;
+    padding: 100px 0;
+    background-color: var(--bg-color); /* Fallback for when image doesn't load */
+}
+
+.story-background {
+    position: absolute;
+    top: -50%; /* Start higher to allow for movement */
+    left: 0;
+    width: 100%;
+    height: 200%; /* Taller than the section to allow for movement */
+    z-index: 0;
+    opacity: 0.1;
+    overflow: hidden;
+}
+
+.story-background-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.story-section .container {
+    position: relative;
+    z-index: 1;
+}
+
+.story-content {
+    background-color: rgba(250, 247, 245, 0.8); /* Semi-transparent version of light bg */
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.dark-mode .story-content {
+    background-color: rgba(61, 60, 58, 0.8); /* Semi-transparent version of dark bg */
+}
+
+.story-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.story-content p {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+
+/* Values Section */
+.values-section {
+    padding: 100px 0;
+    background-color: var(--bg-color);
+}
+
+.values-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+.value-item .value-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.value-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.value-item p {
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-background-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color-hover);
+    transform: translateY(-3px);
+}
+
 
 /* Animations */
 @keyframes fadeInUp {
